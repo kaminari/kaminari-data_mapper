@@ -9,6 +9,6 @@ end
 
 require 'dm-aggregates'
 require 'kaminari/data_mapper/data_mapper_extension'
-::DataMapper::Collection.send :include, Kaminari::DataMapperExtension::Collection
-::DataMapper::Model.append_extensions Kaminari::DataMapperExtension::Model
-# ::DataMapper::Model.send :extend, Kaminari::DataMapperExtension::Model
+::DataMapper::Collection.send :include, Kaminari::DataMapper::DataMapperExtension::Collection
+::DataMapper::Model.append_extensions Kaminari::DataMapper::DataMapperExtension::Model
+# ::DataMapper::Model.send :extend, Kaminari::DataMapper::DataMapperExtension::Model

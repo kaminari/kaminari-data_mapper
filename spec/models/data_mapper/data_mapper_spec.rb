@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 # tests for issue #203
-describe Kaminari::DataMapperCollectionMethods do
+describe Kaminari::DataMapper::DataMapperCollectionMethods do
   before do
     30.times do |i|
       User.create(:name => "User#{i}", :age => i)
@@ -22,7 +22,7 @@ describe Kaminari::DataMapperCollectionMethods do
 
 end
 
-describe Kaminari::DataMapperExtension do
+describe Kaminari::DataMapper::DataMapperExtension do
   before do
     90.times do |i|
       User.create(:name => "User#{i}", :age => i)
@@ -45,7 +45,7 @@ describe Kaminari::DataMapperExtension do
   describe '#page' do
     context 'page 0' do
       subject { User.all(:age.gte => 60).page 0 }
-      it { should be_a DataMapper::Collection }
+      it { should be_a ::DataMapper::Collection }
       its(:current_page) { should == 1 }
       its(:prev_page) { should be_nil }
       its(:next_page) { should == 2 }
@@ -57,7 +57,7 @@ describe Kaminari::DataMapperExtension do
 
     context 'page 1' do
       subject { User.all(:age.gte => 0).page 1 }
-      it { should be_a DataMapper::Collection }
+      it { should be_a ::DataMapper::Collection }
       its(:current_page) { should == 1 }
       its(:prev_page) { should be_nil }
       its(:next_page) { should == 2 }
@@ -69,7 +69,7 @@ describe Kaminari::DataMapperExtension do
 
     context 'page 2' do
       subject { User.page 2 }
-      it { should be_a DataMapper::Collection }
+      it { should be_a ::DataMapper::Collection }
       its(:current_page) { should == 2 }
       its(:prev_page) { should == 1 }
       its(:next_page) { should == 3 }
@@ -82,7 +82,7 @@ describe Kaminari::DataMapperExtension do
 
     context 'page "foobar"' do
       subject { User.page 'foobar' }
-      it { should be_a DataMapper::Collection }
+      it { should be_a ::DataMapper::Collection }
       its(:current_page) { should == 1 }
       its(:prev_page) { should be_nil }
       its(:next_page) { should == 2 }
@@ -94,7 +94,7 @@ describe Kaminari::DataMapperExtension do
 
     context 'with criteria before' do
       subject { User.all(:age.gt => 60).page 2 }
-      it { should be_a DataMapper::Collection }
+      it { should be_a ::DataMapper::Collection }
       its(:current_page) { should == 2 }
       its(:prev_page) { should == 1 }
       its(:next_page) { should be_nil }
@@ -106,7 +106,7 @@ describe Kaminari::DataMapperExtension do
 
     context 'with criteria after' do
       subject { User.page(2).all(:age.gt => 60) }
-      it { should be_a DataMapper::Collection }
+      it { should be_a ::DataMapper::Collection }
       its(:current_page) { should == 2 }
       its(:prev_page) { should == 1 }
       its(:next_page) { should be_nil }
@@ -120,7 +120,7 @@ describe Kaminari::DataMapperExtension do
   describe '#per' do
     context 'on simple query' do
       subject { User.page(2).per(20) }
-      it { should be_a DataMapper::Collection }
+      it { should be_a ::DataMapper::Collection }
       its(:current_page) { should == 2 }
       its(:prev_page) { should == 1 }
       its(:next_page) { should == 3 }
