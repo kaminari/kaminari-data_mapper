@@ -16,6 +16,8 @@ require 'capybara/rspec'
 require 'database_cleaner'
 
 require 'fake_app/rails_app'
+require 'fake_app/data_mapper/config'
+require 'fake_app/data_mapper/models'
 
 require 'rspec/rails'
 
