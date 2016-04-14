@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'kaminari'
   spec.add_development_dependency 'data_mapper'
   spec.add_development_dependency 'rails'
-  spec.add_development_dependency 'rspec-rails'
+  spec.add_development_dependency 'rspec-rails', '~> 2.14.1'
   spec.add_development_dependency 'capybara'
   spec.add_development_dependency 'database_cleaner'
   spec.add_development_dependency 'rr'
