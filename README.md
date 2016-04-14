@@ -26,7 +26,7 @@ See [Kaminari README](https://github.com/amatsuda/kaminari/blob/master/README.rd
 
 ## Contributing
 
-Pull requests are welcome on GitHub at https://github.com/kaminari/kaminari-data\_mapper
+Pull requests are welcome on GitHub at https://github.com/kaminari/kaminari-data_mapper
 
 
 ## License
