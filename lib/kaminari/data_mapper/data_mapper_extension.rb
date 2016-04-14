@@ -1,4 +1,4 @@
-require 'kaminari/models/data_mapper_collection_methods'
+require 'kaminari/data_mapper/data_mapper_collection_methods'
 
 module Kaminari
   module DataMapperExtension
