@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ronnie@dio.jp"]
 
   spec.summary       = 'Kaminari DataMapper adapter'
-  spec.description   = 'Kaminari DataMapper adapter'
+  spec.description   = 'kaminari-data_mapper lets your DataMapper models be paginatable'
   spec.homepage      = 'https://github.com/kaminari/kaminari-data_mapper'
   spec.license       = "MIT"
 
